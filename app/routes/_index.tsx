@@ -1,13 +1,29 @@
 import type { MetaFunction } from '@remix-run/node';
+import clsx from 'clsx';
+import { useState } from 'react';
+import { flushSync } from 'react-dom';
+import { Switch } from 'ui/switch';
 
 export const meta: MetaFunction = () => {
   return [{ title: '孫子兵法' }, { name: 'description', content: '孫子兵法' }];
 };
 
 export default function Index() {
+  const [isVertical, setIsVertical] = useState(true);
+
+  const onCheckedChange = (value: boolean) => {
+    document.startViewTransition(() => {
+      flushSync(() => {
+        setIsVertical(value);
+      });
+    });
+  };
+
   return (
-    <main>
+    <main className={clsx({ vertical: isVertical })}>
       <h1>孫子兵法</h1>
+
+      <Switch onCheckedChange={onCheckedChange} checked={isVertical} />
 
       <h2>始計第一</h2>
       <p>孫子曰：兵者，國之大事，死生之地，存亡之道，不可不察也。</p>

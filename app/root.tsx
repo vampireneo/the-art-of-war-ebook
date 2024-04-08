@@ -5,7 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import styles from './root.module.css';
+import 'style/main.css';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,7 +26,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body className={styles.body}>
+      <body>
         {children}
         <ScrollRestoration />
         <Scripts />
