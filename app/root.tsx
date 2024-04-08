@@ -4,7 +4,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from '@remix-run/react';
+import styles from './root.module.css';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -14,8 +15,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="use-credentials"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body>
+      <body className={styles.body}>
         {children}
         <ScrollRestoration />
         <Scripts />
