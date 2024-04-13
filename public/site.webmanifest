@@ -1,0 +1,28 @@
+{
+  "background_color": "#fffdf2",
+  "dir": "auto",
+  "display": "fullscreen",
+  "name": "孫子兵法",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "The Art of War",
+  "start_url": "/",
+  "theme_color": "#fffdf2",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "id": "the-art-of-war.neochoi.dev",
+  "description": "孫子兵法",
+  "lang": "zh",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "categories": ["books"]
+}
