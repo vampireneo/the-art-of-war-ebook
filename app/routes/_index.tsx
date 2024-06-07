@@ -24,6 +24,9 @@ export default function Index() {
       <h1>孫子兵法</h1>
 
       <Switch onCheckedChange={onCheckedChange} checked={isVertical} />
+      <a href="./test.xlsx" download>
+        download test
+      </a>
 
       <h2>始計第一</h2>
       <p>孫子曰：兵者，國之大事，死生之地，存亡之道，不可不察也。</p>
