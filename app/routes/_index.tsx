@@ -25,7 +25,6 @@ export default function Index() {
       .then((blob) => {
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
-        link.download = '';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
