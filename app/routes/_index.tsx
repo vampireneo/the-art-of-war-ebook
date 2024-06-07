@@ -24,7 +24,7 @@ export default function Index() {
       <h1>孫子兵法</h1>
 
       <Switch onCheckedChange={onCheckedChange} checked={isVertical} />
-      <a href="./test.xlsx" download>
+      <a href="./test.xlsx" download target="_blank">
         download test
       </a>
 
