@@ -19,14 +19,26 @@ export default function Index() {
     });
   };
 
+  const downloadFile = (url: string) => {
+    fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = '';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      })
+      .catch(console.error);
+  };
+
   return (
     <main className={clsx({ vertical: isVertical })}>
       <h1>孫子兵法</h1>
 
       <Switch onCheckedChange={onCheckedChange} checked={isVertical} />
-      <a href="./test.xlsx" download target="_blank">
-        download test
-      </a>
+      <button onClick={() => downloadFile('./test.xlsx')}>download test</button>
 
       <h2>始計第一</h2>
       <p>孫子曰：兵者，國之大事，死生之地，存亡之道，不可不察也。</p>
