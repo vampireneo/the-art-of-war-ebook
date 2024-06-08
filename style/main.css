@@ -5,8 +5,9 @@ body {
   font-size: 1.5rem;
   margin: 16px;
   background-color: rgb(255 253 242);
+  writing-mode: vertical-rl;
 
-  &:has(.vertical) {
-    writing-mode: vertical-rl;
+  &:not(:has(.vertical)) {
+    writing-mode: horizontal-tb;
   }
 }
